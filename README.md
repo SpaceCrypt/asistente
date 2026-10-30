@@ -132,7 +132,3 @@ Si el puerto 8765 ya está ocupado, cierra el servidor anterior antes de abrir e
 - No ejecuta comandos ni programas.
 - No lee ni modifica `.env`, `credentials.json`, `token.json`, `venv` ni `.git`.
 - El servidor solo escucha en `127.0.0.1`.
-
-Lo siento...
-
-27/10/2026 Para Miyu, sorpresa :D

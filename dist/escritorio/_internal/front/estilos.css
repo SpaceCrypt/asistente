@@ -1,0 +1,582 @@
+html {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #1c1916;
+  background: #efeae2;
+}
+
+body,
+button,
+input,
+textarea,
+select,
+pre,
+code {
+  font-family: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  line-height: 1.45;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font-size: 0.95rem;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.pagina {
+  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 16px;
+}
+
+.alerta {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8efe6;
+  border: 1px solid #e2c7ae;
+}
+
+.alerta[hidden] {
+  display: none;
+}
+
+.alertatarjeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.alertatarjeta p {
+  min-width: 0;
+}
+
+.desplegable,
+.etiquetacampo {
+  font-family: inherit;
+}
+
+.etiquetacampo {
+  font-size: 0.85rem;
+  color: #5c564e;
+}
+
+.desplegable {
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #d9d0c4;
+  background: #fffcf8;
+  color: #1c1916;
+}
+
+.cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex: none;
+}
+
+.marca {
+  font-size: 1.35rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.marca::before {
+  content: "";
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.7rem;
+  margin-right: 0.5rem;
+  border-radius: 3px;
+  background: #1a3c34;
+  vertical-align: 0.05em;
+}
+
+.subtitulo,
+.meta,
+.pista,
+.vacio,
+.nota,
+small {
+  color: #5c564e;
+}
+
+.subtitulo,
+.pista,
+.nota {
+  margin-top: 4px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.chip {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fffcf8;
+  border: 1px solid #ddd4c8;
+  color: #3d3832;
+  font-size: 0.85rem;
+}
+
+.cuerpo {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr) 300px;
+  gap: 16px;
+}
+
+.barra,
+.conversacion,
+.panel {
+  min-height: 0;
+  background: #fffcf8;
+  border: 1px solid #e3dacf;
+  border-radius: 16px;
+}
+
+.barra,
+.panel {
+  overflow: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bloque + .bloque {
+  padding-top: 16px;
+  border-top: 1px solid #eee6dc;
+}
+
+.bloquecabeza {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+h2 {
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #5c564e;
+}
+
+.accioneschat,
+.filaacciones,
+.botoneschat,
+.fichaacciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.listachats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fichachat {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #e3dacf;
+  background: #f7f3ed;
+  text-align: left;
+}
+
+.fichachat.chatactivo {
+  border-color: #1a3c34;
+  background: #f3f7f5;
+}
+
+.fichatitulo {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  text-align: left;
+  color: #1c1916;
+  font-weight: 600;
+}
+
+.fichabot,
+.botonsecundario,
+.botoneditar,
+.botonrechazar,
+.atajo {
+  border: 1px solid #d9d0c4;
+  background: #fffcf8;
+  color: #1c1916;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.botonprimario,
+.botonaprobar {
+  border: 0;
+  background: #1a3c34;
+  color: #f7f4ef;
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.botonpeligro,
+.botondetener {
+  border: 0;
+  background: #8c3a2f;
+  color: #fff8f6;
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+button:hover,
+.atajo:hover,
+.fichatitulo:hover {
+  filter: brightness(0.97);
+}
+
+.botonprimario:hover,
+.botonaprobar:hover,
+.botondetener:hover,
+.botonpeligro:hover {
+  filter: brightness(1.08);
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid #1a3c34;
+  outline-offset: 2px;
+}
+
+button:disabled,
+input:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.listamodelos,
+.listamodos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.opcion {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid #e3dacf;
+  border-radius: 12px;
+  background: #f7f3ed;
+}
+
+.opcion:has(input:checked) {
+  border-color: #1a3c34;
+  background: #f3f7f5;
+}
+
+.opcionapagada {
+  opacity: 0.72;
+}
+
+.opcion input {
+  margin-top: 3px;
+  accent-color: #1a3c34;
+}
+
+.opcion span {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.opcion strong {
+  font-weight: 650;
+}
+
+.opcion small,
+.etiqueta {
+  font-size: 0.82rem;
+}
+
+.etiqueta {
+  display: inline-block;
+  margin-top: 2px;
+  color: #1a3c34;
+  font-weight: 650;
+}
+
+.frasemodo {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f3f7f5;
+  color: #1a3c34;
+}
+
+.conversacion {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.mensajes {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 4px;
+}
+
+.burbuja {
+  max-width: min(100%, 42rem);
+  padding: 10px 12px;
+  border-radius: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.burbujaasistente {
+  align-self: flex-start;
+  background: #f7f3ed;
+  border: 1px solid #e3dacf;
+}
+
+.burbujausuario {
+  align-self: flex-end;
+  background: #1a3c34;
+  color: #f7f4ef;
+}
+
+.burbujaerror {
+  border-color: #8c3a2f;
+}
+
+.burbujausuario .botoneditar {
+  margin-top: 8px;
+  background: transparent;
+  color: #f7f4ef;
+  border-color: rgba(247, 244, 239, 0.45);
+}
+
+.editor {
+  width: 100%;
+  min-height: 5rem;
+  resize: vertical;
+  border: 1px solid #d9d0c4;
+  border-radius: 10px;
+  padding: 8px;
+  background: #fffcf8;
+  color: #1c1916;
+}
+
+.usometro {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f7f3ed;
+  border: 1px solid #e3dacf;
+}
+
+.usolinea {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-weight: 650;
+}
+
+.usopulso {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #cfc6ba;
+}
+
+.usopulso.activo {
+  background: #1a3c34;
+}
+
+.usocifras,
+.usosesion {
+  color: #5c564e;
+  font-size: 0.88rem;
+}
+
+.avisoaccion {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: #f8efe6;
+  border: 1px solid #e2c7ae;
+  color: #6a3e22;
+}
+
+.atajos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.composer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  align-items: end;
+}
+
+.etiquetamensaje {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+#entrada {
+  width: 100%;
+  min-height: 4.5rem;
+  resize: vertical;
+  border: 1px solid #d9d0c4;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fffcf8;
+  color: #1c1916;
+}
+
+.botoneschat {
+  align-self: end;
+}
+
+.pista {
+  margin-top: -4px;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #e3dacf;
+  background: #f7f3ed;
+}
+
+.tarjeta h3 {
+  font-size: 1rem;
+}
+
+.resumen,
+.vista,
+#listaactividad {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.raices {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.vista {
+  max-height: 11rem;
+  overflow: auto;
+  margin: 0;
+  padding: 8px;
+  border-radius: 10px;
+  background: #fffcf8;
+  border: 1px solid #eee6dc;
+}
+
+#listaactividad {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#panelestado {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+#conectargoogle {
+  align-self: flex-start;
+}
+
+@media (max-width: 1080px) {
+  .pagina {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .cuerpo {
+    grid-template-columns: 1fr;
+  }
+
+  .conversacion {
+    min-height: 70vh;
+  }
+}

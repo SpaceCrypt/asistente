@@ -1,0 +1,8 @@
+# Solo datos personales y secretos. El código, el venv y el exe sí se comparten.
+.env
+credentials.json
+token.json
+client_secret.json
+client_secret*.json
+datos/
+*.asistente.tmp

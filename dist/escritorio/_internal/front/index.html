@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Asistente personal</title>
+  <link rel="stylesheet" href="/estilos.css">
+</head>
+<body>
+  <div class="pagina">
+    <div id="alerta" class="alerta" hidden></div>
+    <header class="cabecera">
+      <div>
+        <h1 class="marca">Asistente personal</h1>
+        <p class="subtitulo">En este equipo. Escribir, borrar, mover o enviar exige tu aprobación.</p>
+      </div>
+      <div class="chips" id="chips"></div>
+    </header>
+    <div class="cuerpo">
+      <aside class="barra" aria-label="Chats, modelo y recursos">
+        <section class="bloque">
+          <div class="bloquecabeza">
+            <h2>Chats</h2>
+            <div class="accioneschat">
+              <button type="button" id="nuevachat" class="botonsecundario">Nuevo</button>
+              <button type="button" id="verarchivados" class="botonsecundario">Archivados</button>
+            </div>
+          </div>
+          <div id="listachats" class="listachats"></div>
+        </section>
+        <section class="bloque">
+          <h2>Modelo</h2>
+          <label class="etiquetacampo" for="seleccionmodelo">Modelo instalado</label>
+          <select id="seleccionmodelo" class="desplegable"></select>
+          <p id="detallemode" class="nota"></p>
+          <p id="notamodelos" class="nota">Cargando los modelos instalados…</p>
+        </section>
+        <section class="bloque">
+          <h2>Modo de recursos</h2>
+          <label class="etiquetacampo" for="seleccionmodo">Recursos</label>
+          <select id="seleccionmodo" class="desplegable">
+            <option value="ram">Solo RAM</option>
+            <option value="mixto">Gráfica y RAM</option>
+            <option value="gpu">Solo gráfica</option>
+          </select>
+          <p id="avisomodo" class="nota"></p>
+          <p id="frasemodo" class="frasemodo">Modo activo: Solo RAM. Esto no toca la gráfica.</p>
+        </section>
+      </aside>
+      <main class="conversacion" aria-label="Conversación">
+        <div class="mensajes" id="mensajes" role="log" aria-live="polite"></div>
+        <div id="usometro" class="usometro" aria-live="polite">
+          <div class="usolinea">
+            <span id="usopulso" class="usopulso"></span>
+            <span id="usomodelo">—</span>
+            <span id="usoestado">inactivo</span>
+            <span id="usotiempo">— s</span>
+          </div>
+          <p id="usogpu" class="usocifras"></p>
+          <p id="usomodo" class="usocifras">Solo RAM. Esto no toca la gráfica.</p>
+          <p id="usocifras" class="usocifras">entrada — · salida — · — tok/s</p>
+          <p id="usosesion" class="usosesion">Sesión: entrada — · salida — · — s</p>
+        </div>
+        <p id="avisoaccion" class="avisoaccion" hidden></p>
+        <div class="atajos" id="atajos">
+          <button type="button" class="atajo" dataejemplo="lista los archivos de mi escritorio">Escritorio</button>
+          <button type="button" class="atajo" dataejemplo="qué tengo en el calendario">Calendario</button>
+          <button type="button" class="atajo" dataejemplo="muéstrame mis tareas">Tareas</button>
+          <button type="button" class="atajo" dataejemplo="qué puedes hacer por mí">Ayuda</button>
+        </div>
+        <form class="composer" id="formulario">
+          <label class="etiquetamensaje" for="entrada">Mensaje</label>
+          <textarea id="entrada" rows="3" placeholder="Dime qué necesitas" autocomplete="off"></textarea>
+          <div class="botoneschat">
+            <button type="submit" id="enviarchat" class="botonprimario">Enviar</button>
+            <button type="button" id="detenerchat" class="botondetener" hidden>Detener</button>
+          </div>
+        </form>
+        <p class="pista">Enter envía. Mayús+Enter baja de línea.</p>
+      </main>
+      <aside class="panel" aria-label="Pendientes y estado">
+        <section class="bloque">
+          <h2>Acciones pendientes</h2>
+          <div id="listapendientes" aria-live="polite"></div>
+        </section>
+        <section class="bloque">
+          <h2>Estado</h2>
+          <div id="panelestado"></div>
+          <button type="button" id="conectargoogle" class="botonprimario">Conectar Google</button>
+          <p id="avisogoogle" class="meta"></p>
+        </section>
+        <section class="bloque">
+          <h2>Actividad reciente</h2>
+          <ul id="listaactividad"></ul>
+        </section>
+        <section class="bloque">
+          <h2>Datos locales</h2>
+          <div class="filaacciones">
+            <button type="button" id="limpiarpendientes" class="botonsecundario">Limpiar pendientes</button>
+            <button type="button" id="limpiaractividad" class="botonsecundario">Limpiar actividad</button>
+            <button type="button" id="olvidaraprendido" class="botonsecundario">Olvidar lo aprendido</button>
+          </div>
+          <p class="nota">Limpiar pendientes y limpiar actividad vacían la cola, el registro y el último turno. No borran lo aprendido. Eso solo lo hace el botón aparte.</p>
+        </section>
+      </aside>
+    </div>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>
